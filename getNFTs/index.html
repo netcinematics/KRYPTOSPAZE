@@ -20,6 +20,7 @@
     <article>
         <h2>COLLECTION-NAME</h2>
         <h2>OWNER</h2>
+        <section id="statusDisplay1">...</section>
         <section id="nftDisplay1">...</section>
     </article>   
 </body>
@@ -27,6 +28,7 @@
 let mainView = null;
 const loginButton = document.getElementById('loginBtn')
 const nftDisplay1 = document.getElementById('nftDisplay1')
+const statusDisplay1 = document.getElementById('statusDisplay1')
 class MainViewClass {
     constructor(account){
         this.userAccount = account;
@@ -214,6 +216,9 @@ function initPage(){
 \***************************************************************************************************/    
     // getNFTBtn.addEventListener('click',()=>{  //debugger;   //GET-NFT-BUTTON!
         //***********************************************************//OpenSea API : getNFT (single)
+    alert('start')
+    
+    try{
         let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
             assetContractAddr:"0x495f947276749Ce646f68AC8c248420045cb7b5e", 
             tokenId:"32091639769859466206787752406743660124435242419967811135209154768441297600513"}
@@ -228,7 +233,13 @@ function initPage(){
         getNFTCollections(getNFTCollectionsbyOwner.owner)
         //****************************************************************************
     // }); //END: GETNFT button click-.
+        }catch(e){
+            debugger;
+            alert(a)
+        }
 
+
+        alert('ok')
     //START: INIT METAMASK BUTTON-.
     loginButton.addEventListener('click',()=>{
         //ERROR-TRAP
