@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COZMOSHOW</title>    
+    <title>SHOWNFTs</title>    
     <style>
         *, ::before, ::after { box-sizing: border-box; }
         body{ color:steelblue; background:black; text-align:center; }
@@ -20,7 +20,7 @@
     <article>
         <h2>COLLECTION-NAME</h2>
         <h2>OWNER</h2>
-        <section id="statusDisplay1">...</section>
+        <section id="statusDisplay1">~</section>
         <section id="nftDisplay1">...</section>
     </article>   
 </body>
@@ -216,7 +216,7 @@ function initPage(){
 \***************************************************************************************************/    
     // getNFTBtn.addEventListener('click',()=>{  //debugger;   //GET-NFT-BUTTON!
         //***********************************************************//OpenSea API : getNFT (single)
-    alert('start')
+    statusDisplay1.innerHTML = "TEST";
     
     try{
         let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
@@ -234,8 +234,7 @@ function initPage(){
         //****************************************************************************
     // }); //END: GETNFT button click-.
         }catch(e){
-            debugger;
-            alert(a)
+            statusDisplay1.innerHTML = "ERROR"+e.message;
         }
 
 
