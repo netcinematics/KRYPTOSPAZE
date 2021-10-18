@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOWNFTs</title>    
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+    <title>CRYPT0SPAZE</title>    
     <style>
         *, ::before, ::after { box-sizing: border-box; }
         body{ color:steelblue; background:black; text-align:center; }
@@ -14,14 +15,34 @@
     </style>
 </head>
 <body>
-    <button id="HomeBtn" class="menuBtn notConnected" ><a href="/CRYPTOSPAZE/">HOME</a></button>    
-    <button id="loginBtn" class="menuBtn notConnected">CONNECT METAMASK</button>    
-    <button id="getNFTBtn" class="menuBtn">GET OPENSEA</button> 
+
+    <a href="#main" class="button scrolly"><i class="fas fa-home" style="color:darkorange">&nbsp;</i>HOME</a>
+    <!-- <a href="#main" class="button scrolly"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
+    <a href="/CRYPTOSPAZE/getNFTs/" class="button scrolly"><i class="fas fa-photo-video" style="color:darkseagreen">&nbsp;</i>CARDz</a>
+    <a href="#main" class="button scrolly"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>HEROz</a>
+    <a href="#main" class="button scrolly"><i class="fas fa-music" style="color:mediumpurple">&nbsp;</i>JAMz</a>
+    <!-- <a href="#main" class="button scrolly"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
+    <a href="#main" class="button scrolly"><i class="fas fa-video" style="color:indianred">&nbsp;</i>VIDz</a>
+    <a href="#main" class="button scrolly"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;</i>ALL</a>
+    
+<!--
+    <button id="HomeBtn" class="menuBtn" style="color:darkorange" ><a href="/CRYPTOSPAZE/">
+        <i class="fas fa-home"></i>&nbsp;HOME</a></button>    
+    <button id="HerozBtn" class="menuBtn">
+        <i class="fas fa-film"></i>&nbsp;HEROZ</button>    
+    <button id="VidzBtn" class="menuBtn">
+        <i class="fas fa-photo-video"></i>&nbsp;VIDZ</button>    
+    <button id="JamzBtn" class="menuBtn" style="color:mediumpurple">
+        <i class="fas fa-music"></i>&nbsp;JAMZ</button>    
+    <button id="CardzBtn" class="menuBtn" style="color:darkseagreen">
+        <i class="fas fa-film"></i>&nbsp;CARDZ</button>    
+     <button id="loginBtn" class="menuBtn">CONNECT METAMASK</button>     -->
+    <!-- <button id="getNFTBtn" class="menuBtn">GET OPENSEA</button>  -->
     <article>
         <h2>COLLECTION-NAME</h2>
-        <h2>OWNER</h2>
+        <h2>CREATOR</h2>
         <section id="statusDisplay1">.~.</section>
-        <section id="nftDisplay1">...</section>
+        <section id="nftDisplay1"> </section>
     </article>   
 </body>
 <script>
@@ -41,6 +62,9 @@ class MainViewClass {
     }
 }
 function initPage(){
+/***************************************************************************************************\
+ * META - ability for page to override and change dynamically-. - : )
+\***************************************************************************************************/
 /***************************************************************************************************\
  * GETDATA - all types of data requestFunctions here-. - : )
 \***************************************************************************************************/
@@ -229,7 +253,7 @@ function initPage(){
         //****************************************************************************
     // }); //END: GETNFT button click-.
     }catch(e){
-        statusDisplay1.innerHTML = "ERROR"+e.message;
+        statusDisplay1.innerHTML = "ERROR"+" no signal."; //e.message;
     }
 
 
