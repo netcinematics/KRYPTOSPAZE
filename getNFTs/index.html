@@ -20,7 +20,7 @@
     <article>
         <h2>COLLECTION-NAME</h2>
         <h2>OWNER</h2>
-        <section id="statusDisplay1">~</section>
+        <section id="statusDisplay1">.~.</section>
         <section id="nftDisplay1">...</section>
     </article>   
 </body>
@@ -41,8 +41,6 @@ class MainViewClass {
     }
 }
 function initPage(){
-    //ERROR-TRAP, before initializing FRONT-END-INTERFACE-.
-    if (!window.ethereum){ loginButton.innerText = "Get MetaMask"; return false; } 
 /***************************************************************************************************\
  * GETDATA - all types of data requestFunctions here-. - : )
 \***************************************************************************************************/
@@ -136,9 +134,6 @@ function initPage(){
         artCardIMG.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
         artCardIMG.style.borderRadius = "4px"
         artCardIMG.style.marginBottom = "1em"
-
-
-
         artCardIMG.src = nft.image_url;   //large 600 size  //OTHER IMAGE TYPES HERE:
         // artCardIMG.src = nft.image_original_url; //giant original size
         // artCardIMG.src = nft.image_preview_url;      //medium 350 size
@@ -216,7 +211,7 @@ function initPage(){
 \***************************************************************************************************/    
     // getNFTBtn.addEventListener('click',()=>{  //debugger;   //GET-NFT-BUTTON!
         //***********************************************************//OpenSea API : getNFT (single)
-    statusDisplay1.innerHTML = "TEST";
+//     statusDisplay1.innerHTML = "TEST";
     
     try{
         let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
@@ -233,9 +228,9 @@ function initPage(){
         getNFTCollections(getNFTCollectionsbyOwner.owner)
         //****************************************************************************
     // }); //END: GETNFT button click-.
-        }catch(e){
-            statusDisplay1.innerHTML = "ERROR"+e.message;
-        }
+    }catch(e){
+        statusDisplay1.innerHTML = "ERROR"+e.message;
+    }
 
 
 //         alert('ok')
@@ -267,6 +262,8 @@ function initPage(){
 
 function initMetaMask(){
     debugger;
+        //ERROR-TRAP, before initializing FRONT-END-INTERFACE-.
+    if (!window.ethereum){ loginButton.innerText = "Get MetaMask"; return false; } 
     mainView.eth.on('accountsChanged', (accounts) => {
         debugger;
         // Handle the new accounts, or lack thereof.
