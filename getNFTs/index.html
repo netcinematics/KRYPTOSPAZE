@@ -7,50 +7,80 @@
     <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
     <title>CRYPT0SPAZE</title>    
     <style>
+        .fas::after { font-family: Verdana}
         *, ::before, ::after { box-sizing: border-box; }
-        body{ color:steelblue; background:black; text-align:center; }
-        .menuBtn{ border-radius:13px; padding: 0.44em; cursor: pointer; }
-        .connected{ background: #6a6a6a; }
-        .notConnected{ background: green; }
+        body{ color:steelblue; background:black; text-align:center; font-family:Verdana; }
+        .menuBtn{
+            background: #27182e;
+            margin: 0.222em;
+            padding: 0.444em;
+            border-radius: 13px;
+            font-family: Verdana
+        }
+        .menuBtn:hover{ border-radius:10px; border:1px solid steelblue; cursor: pointer; }
     </style>
 </head>
 <body>
+    <script>
 
-    <a href="#main" class="button scrolly"><i class="fas fa-home" style="color:darkorange">&nbsp;</i>HOME</a>
-    <!-- <a href="#main" class="button scrolly"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
-    <a href="/CRYPTOSPAZE/getNFTs/" class="button scrolly"><i class="fas fa-photo-video" style="color:darkseagreen">&nbsp;</i>CARDz</a>
-    <a href="#main" class="button scrolly"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>HEROz</a>
-    <a href="#main" class="button scrolly"><i class="fas fa-music" style="color:mediumpurple">&nbsp;</i>JAMz</a>
-    <!-- <a href="#main" class="button scrolly"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
-    <a href="#main" class="button scrolly"><i class="fas fa-video" style="color:indianred">&nbsp;</i>VIDz</a>
-    <a href="#main" class="button scrolly"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;</i>ALL</a>
+
+        </script>
+<section style="padding: 0.444em;">
+    <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span>
+    <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
+    <button id="NavBtn2" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-photo-video" style="color:lightskyblue">&nbsp;CARDz</i></a>
+    <button id="NavBtn3"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-book" style="color:darkseagreen">&nbsp;HEROz</i></a>
+    <button id="NavBtn4"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
+    <button id="NavBtn5"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
+    <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+     <!--<a href="#main" class="button"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
+    <!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
+</section>
     
-<!--
-    <button id="HomeBtn" class="menuBtn" style="color:darkorange" ><a href="/CRYPTOSPAZE/">
-        <i class="fas fa-home"></i>&nbsp;HOME</a></button>    
-    <button id="HerozBtn" class="menuBtn">
-        <i class="fas fa-film"></i>&nbsp;HEROZ</button>    
-    <button id="VidzBtn" class="menuBtn">
-        <i class="fas fa-photo-video"></i>&nbsp;VIDZ</button>    
-    <button id="JamzBtn" class="menuBtn" style="color:mediumpurple">
-        <i class="fas fa-music"></i>&nbsp;JAMZ</button>    
-    <button id="CardzBtn" class="menuBtn" style="color:darkseagreen">
-        <i class="fas fa-film"></i>&nbsp;CARDZ</button>    
-     <button id="loginBtn" class="menuBtn">CONNECT METAMASK</button>     -->
-    <!-- <button id="getNFTBtn" class="menuBtn">GET OPENSEA</button>  -->
-    <article>
-        <h2>COLLECTION-NAME</h2>
-        <h2>CREATOR</h2>
-        <section id="statusDisplay1">.~.</section>
-        <section id="nftDisplay1"> </section>
-    </article>   
+
+
+<section style="padding: 0.444em; font-size:0.888em;">
+    
+    <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px purple;">NFTs:</span>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+        
+</section>  
+<script>
+
+</script>
+<header style="padding:0.666em;">
+    <section>
+        <span style="    font-size:1.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;">NFT~COLLECTION:&nbsp;</span>
+        <span>___ALL____</span>
+    </section>
+    <section style="padding:0.777em;">
+        <span style="    font-size:1.222em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px white;">NFT~ARTIST:&nbsp;</span>
+        <span>___spazeFalcon___</span>
+    </section>
+    <section id="statusDisplay1" style="font-size: 0.666em;">rendering ETH NFTs from OpenSea.</section>
+    <!-- <section id="statusDisplay1">< ~ ></section> -->
+</header>
+<article>
+    <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px;"> </section>
+</article>   
 </body>
 <script>
-let mainView = null;
-const loginButton = document.getElementById('loginBtn')
+// let mainView = null;
+// const loginButton = document.getElementById('loginBtn')
 const nftDisplay1 = document.getElementById('nftDisplay1')
-const statusDisplay1 = document.getElementById('statusDisplay1')
-class MainViewClass {
+// const statusDisplay1 = document.getElementById('statusDisplay1')
+class MainVw {
     constructor(account){
         this.userAccount = account;
         this.eth = window.ethereum;
@@ -61,6 +91,25 @@ class MainViewClass {
         this.txnHash = 0x7d0512fa5e19d2d775bb55efe9b5e9960cc59f9c67c627b1f5eb22a5749162f2; //creator transaction hash
     }
 }
+
+function menuFn(e){ //ALL MENU BEHAVIOR in 1 FACTORY fn.
+    switch (e.target.parentElement.id){
+        case 'NavBtn1' : window.open("https://netcinematics.github.io/CRYPTOSPAZE/", '_blank'); ; break;
+        case 'NavBtn2' : MainVw.getNFTFactory(2); break;
+        case 'NavBtn3' : MainVw.getNFTFactory(3); break;
+        case 'NavBtn4' : MainVw.getNFTFactory(4); break;
+        case 'NavBtn5' : MainVw.getNFTFactory(5); break;
+        case 'NavBtn6' : MainVw.getNFTFactory(6); break;
+        case 'NavBtn7' : MainVw.getNFTFactory(7); break;
+        case 'NavBtn8' : MainVw.getNFTFactory(8); break;
+        case 'NavBtn9' : MainVw.getNFTFactory(9); break;
+        case 'NavBtn10' : MainVw.getNFTFactory(10); break;
+        case 'NavBtn11' : MainVw.getNFTFactory(11); break;
+        case 'NavBtn12' : MainVw.getNFTFactory(12); break;
+        default : return;
+    }
+}
+
 function initPage(){
 /***************************************************************************************************\
  * META - ability for page to override and change dynamically-. - : )
@@ -68,6 +117,40 @@ function initPage(){
 /***************************************************************************************************\
  * GETDATA - all types of data requestFunctions here-. - : )
 \***************************************************************************************************/
+    function getNFTFactory(mode){
+        try{
+            if (nftDisplay1) { nftDisplay1.innerHTML = ""; } //BLANK data view-.
+            if(mode===2){  //cardz
+
+            } else if(mode===3){  //heroz
+
+            } else if(mode===4){  //jamz
+
+            } else if(mode===5){  //vidz
+
+            } else if(mode===6 || mode===12){ //DISPLAY ALL-.
+                //****************************************************************************
+                let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
+                    assetContractAddr:"0x495f947276749Ce646f68AC8c248420045cb7b5e", 
+                    tokenId:"32091639769859466206787752406743660124435242419967811135209154768441297600513"}
+                // getNFT(getNFTbyContractAndToken)
+                //****************************************************************************
+                let getNFTSbyOwner={  //GETNFTS by Owner. - PLURAL NFTZ MULTIPLE!
+                    owner:"0x46f3397433384f2e31262596642c811929d6c069"}
+                getNFTs(getNFTSbyOwner.owner)
+                //*********************************************************//OpenSea API : getNFTs (multiple) 
+                let getNFTCollectionsbyOwner={  //GETNFT Collections by Owner. - PLURAL COLLECTIONZ MULTIPLE!    
+                    owner:"0x46f3397433384f2e31262596642c811929d6c069"}   
+                getNFTCollections(getNFTCollectionsbyOwner.owner)
+                //****************************************************************************
+            }
+        // }); //END: GETNFT button click-.
+        }catch(e){
+            // statusDisplay1.innerHTML = "ERROR"+" no signal."; //e.message;
+        }
+    }
+    MainVw.getNFTFactory = getNFTFactory; //Connect to main scope-.
+
      function getNFT(nftFactory){
         // example:
         // let nftFactory={
@@ -237,278 +320,33 @@ function initPage(){
         //***********************************************************//OpenSea API : getNFT (single)
 //     statusDisplay1.innerHTML = "TEST";
     
-    try{
-        let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
-            assetContractAddr:"0x495f947276749Ce646f68AC8c248420045cb7b5e", 
-            tokenId:"32091639769859466206787752406743660124435242419967811135209154768441297600513"}
-        // getNFT(getNFTbyContractAndToken)
-        //****************************************************************************
-        let getNFTSbyOwner={  //GETNFTS by Owner. - PLURAL NFTZ MULTIPLE!
-            owner:"0x46f3397433384f2e31262596642c811929d6c069"}
-        getNFTs(getNFTSbyOwner.owner)
-        //*********************************************************//OpenSea API : getNFTs (multiple) 
-        let getNFTCollectionsbyOwner={  //GETNFT Collections by Owner. - PLURAL COLLECTIONZ MULTIPLE!    
-            owner:"0x46f3397433384f2e31262596642c811929d6c069"}   
-        getNFTCollections(getNFTCollectionsbyOwner.owner)
-        //****************************************************************************
-    // }); //END: GETNFT button click-.
-    }catch(e){
-        statusDisplay1.innerHTML = "ERROR"+" no signal."; //e.message;
-    }
+    // try{
+    //     let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
+    //         assetContractAddr:"0x495f947276749Ce646f68AC8c248420045cb7b5e", 
+    //         tokenId:"32091639769859466206787752406743660124435242419967811135209154768441297600513"}
+    //     // getNFT(getNFTbyContractAndToken)
+    //     //****************************************************************************
+    //     let getNFTSbyOwner={  //GETNFTS by Owner. - PLURAL NFTZ MULTIPLE!
+    //         owner:"0x46f3397433384f2e31262596642c811929d6c069"}
+    //     getNFTs(getNFTSbyOwner.owner)
+    //     //*********************************************************//OpenSea API : getNFTs (multiple) 
+    //     let getNFTCollectionsbyOwner={  //GETNFT Collections by Owner. - PLURAL COLLECTIONZ MULTIPLE!    
+    //         owner:"0x46f3397433384f2e31262596642c811929d6c069"}   
+    //     getNFTCollections(getNFTCollectionsbyOwner.owner)
+    //     //****************************************************************************
+    // // }); //END: GETNFT button click-.
+    // }catch(e){
+    //     statusDisplay1.innerHTML = "ERROR"+" no signal."; //e.message;
+    // }
 
 
 //         alert('ok')
     //START: INIT METAMASK BUTTON-.
-    loginButton.addEventListener('click',()=>{
-        //ERROR-TRAP
-        // if(mainView && mainView.userAccount){
-        // if(window.ethereum && ethereum.isConnected()){
-        //     alert('connected');
-        //     return false;
-        // }
-        ethereum.request({ method: 'eth_requestAccounts' })
-        .then((data)=>{
-            debugger;
-            mainView = new MainViewClass(data[0])
-            loginButton.classList.add('connected')
-            loginButton.classList.remove('notConnected')
-            loginButton.innerText = "METAMASK CONNECTED"
-            // initMetaMask();
-        })
-        .catch((e)=>{ //user disconnected
-            debugger;
-            e.code;
-            e.message;
-            e.data;
-        })
-    })      
 }
-
-function initMetaMask(){
-    debugger;
-        //ERROR-TRAP, before initializing FRONT-END-INTERFACE-.
-    if (!window.ethereum){ loginButton.innerText = "Get MetaMask"; return false; } 
-    mainView.eth.on('accountsChanged', (accounts) => {
-        debugger;
-        // Handle the new accounts, or lack thereof.
-        // "accounts" will always be an array, but it can be empty.
-    });
-    // ethereum.removeListener('accountsChanged', handleAccountsChanged);
-    // ethereum.on('connect', handler: (connectInfo: ConnectInfo) => void);
-    // ethereum.on('disconnect', handler: (error: ProviderRpcError) => void);
-    // ethereum.on('message', handler: (message: ProviderMessage) => void);
-    mainView.eth.on('chainChanged', (chainId) => {
-        debugger;
-        //KEEP TRACK OF CHAINID.
-        // Handle the new chain.
-        // Correctly handling chain changes can be complicated.
-        // We recommend reloading the page unless you have good reason not to.
-        window.location.reload();
-    });
-
-    // getTokenImages(contractAddress, tokenID) {
-    // return new Promise((resolve, reject) => {
-    // setTimeout(() => {
-    //     debugger;
-    //     mainView.NFTURL = "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/32091639769859466206787752406743660124435242419967811135209154768441297600513"
-    //     // this.$http.get(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenID}`).then((asset) => {
-    //     // this.$http.get(mainView.NFTUR).then((asset) => {
-    //     fetch(mainView.NFTURL).then((asset) => {
-    //         debugger;
-    //     resolve({
-    //         url: asset.data.image_url,
-    //         previewUrl: asset.data.image_preview_url,
-    //         thumbnailUrl: asset.data.image_thumbnail_url,
-    //         originalUrl: asset.data.image_original_url,
-    //         name: asset.data.name,
-    //         permalink: asset.data.permalink,
-    //         traits: asset.data.traits,
-    //     })
-    //     }).catch((err) => reject(err))
-    // }, 200)
-    // })
-    // },
-
-
-
-    /**********************************************************\
-    -  Handle chain (network) and chainChanged (per EIP-1193) 
-    \**********************************************************/
-    // const chainId = await ethereum.request({ method: 'eth_chainId' });
-    // handleChainChanged(chainId);
-    // ethereum.on('chainChanged', handleChainChanged);
-    // function handleChainChanged(_chainId) {
-    //     // We recommend reloading the page, unless you must do otherwise
-    //     window.location.reload();
-    // }
-
-    /***********************************************************/
-    /* Handle user accounts and accountsChanged (per EIP-1193) */
-    /***********************************************************/
-
-    // let currentAccount = null;
-    // ethereum
-    // .request({ method: 'eth_accounts' })
-    // .then(handleAccountsChanged)
-    // .catch((err) => {
-    //     // Some unexpected error.
-    //     // For backwards compatibility reasons, if no accounts are available,
-    //     // eth_accounts will return an empty array.
-    //     console.error(err);
-    // });
-
-    // // Note that this event is emitted on page load.
-    // // If the array of accounts is non-empty, you're already
-    // // connected.
-    // ethereum.on('accountsChanged', handleAccountsChanged);
-
-    // // For now, 'eth_accounts' will continue to always return an array
-    // function handleAccountsChanged(accounts) {
-    // if (accounts.length === 0) {
-    //     // MetaMask is locked or the user has not connected any accounts
-    //     console.log('Please connect to MetaMask.');
-    // } else if (accounts[0] !== currentAccount) {
-    //     currentAccount = accounts[0];
-    //     // Do any other work!
-    // }
-    // }
-
-    // /*********************************************/
-    // /* Access the user's accounts (per EIP-1102) */
-    // /*********************************************/
-
-    // // You should only attempt to request the user's accounts in response to user
-    // // interaction, such as a button click.
-    // // Otherwise, you popup-spam the user like it's 1999.
-    // // If you fail to retrieve the user's account(s), you should encourage the user
-    // // to initiate the attempt.
-    // document.getElementById('connectButton', connect);
-
-    // // While you are awaiting the call to eth_requestAccounts, you should disable
-    // // any buttons the user can click to initiate the request.
-    // // MetaMask will reject any additional requests while the first is still
-    // // pending.
-    // function connect() {
-    // ethereum
-    //     .request({ method: 'eth_requestAccounts' })
-    //     .then(handleAccountsChanged)
-    //     .catch((err) => {
-    //     if (err.code === 4001) {
-    //         // EIP-1193 userRejectedRequest error
-    //         // If this happens, the user rejected the connection request.
-    //         console.log('Please connect to MetaMask.');
-    //     } else {
-    //         console.error(err);
-    //     }
-    //     });
-    // }
-
-    //GETNFT****************************************************************************************
-
-    //npm install api --save
-    // const sdk = require('api')('@opensea/v1.0#gbq4cz1cksxopxqw');
-    // sdk['retrieving-a-single-asset']({
-    //     asset_contract_address: '0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb',
-    //     token_id: '1'
-    // })
-    // .then(res => console.log(res))
-    // .catch(err => console.error(err));
-
-
-
-    //opensea-js seaport
-    // const asset = {
-    //     tokenAddress: "0x06012c8cf97bead5deae237070f9587f8e7a266d", // CryptoKitties
-    //     tokenId: "1", // Token ID
-    // }
-    // const asset: OpenSeaAsset = await seaport.api.getAsset({
-    //     tokenAddress, // string
-    //     tokenId, // string | number | null
-    // })
-
-//**************************************************************
-
-/*******************
-In order to get all ERC-20 token balances of an address, the easiest solution (apart from finding an API that returns the data) is to loop through all token contracts (or just the tokens that you're interested in), and call their balanceOf(address) function.
-
-const tokenAddresses = [
-    '0x123',
-    '0x456',
-];
-const myAddress = '0x789';
-
-for (let tokenAddress of tokenAddresses) {
-    const contract = new web3.eth.Contract(erc20AbiJson, tokenAddress);
-    const tokenBalance = await contract.methods.balanceOf(myAddress).call();
-}
-https://stackoverflow.com/questions/68085393/web3-get-all-tokens-by-wallet-address
-
-
-getTokenImages(contractAddress, tokenID) {
-return new Promise((resolve, reject) => {
-setTimeout(() => {
-let mainView.NFTURL = "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/32091639769859466206787752406743660124435242419967811135209154768441297600513"
-this.$http.get(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenID}`).then((asset) => {
-resolve({
-url: asset.data.image_url,
-previewUrl: asset.data.image_preview_url,
-thumbnailUrl: asset.data.image_thumbnail_url,
-originalUrl: asset.data.image_original_url,
-name: asset.data.name,
-permalink: asset.data.permalink,
-traits: asset.data.traits,
-})
-}).catch((err) => reject(err))
-}, 300)
-})
-},
-
-this.statusAction = 'Getting metadata and image URLs via OpenSea...'
-try {
-const images = await this.getTokenImages(contractAddress, transactions[i].tokenID)
-// console.log(images)
-this.assets.push({
-name: transactions[i].tokenName,
-symbol: transactions[i].tokenSymbol,
-tokenID: transactions[i].tokenID,
-images: images
-})
-} catch (err) {
-console.log('Failed to parse', transactions[i].tokenName, contractAddress)
-}
-}
-
-if (!this.assets.length) {
-this.statusAction = 'Failed to load assets from this address. Check the address and try again'
-return
-}
-
-window.localStorage.setItem('savedAssets', JSON.stringify(this.assets))
-window.localStorage.setItem('savedAddress', this.targetAddress)
-console.log('Saved assets and address')
-
-https://github.com/Cyrxopto/nifty-gallery/blob/master/src/components/Gallery.vue
-
-*/ //-------------------------------------------------------------------------------
-
-//ether scan
-     
-// getERC721Transactions () {
-//       return new Promise((resolve, reject) => {
-//         const url = `https://api.etherscan.io/api?module=account&action=tokennfttx&address=${this.targetAddress}&startblock=0&endblock=999999999&sort=asc&apikey=${this.etherscanApiKey}`
-//         this.$http.get(url).then((resp) => {
-//           resolve(resp.data.result)
-//         }).catch((err) => reject(err))
-//       })
-//     },
-
-
-
-
-} //END InitMetaMask()
 
 document.addEventListener("DOMContentLoaded", ()=>{
     initPage();
+    MainVw.getNFTFactory(6); //default load
 })
 </script>
 </html>
