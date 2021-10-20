@@ -46,10 +46,36 @@
 				background: steelblue;
 			}
 
+			.hoverGlow:hover{
+				border: 3px solid #8f7d71;
+    			box-shadow: 1px 1px 7px 2px skyblue;
+			}
+
+			.hoverGlow:active{
+				border: 4px solid #e0b99f;
+    			box-shadow: 2px 2px 7px 2px rgb(174, 216, 233);
+			}
+
+			
+			
+			.icon:hover{
+				border-radius: 100%;
+				border: 3px solid #8f7d71;
+    			box-shadow: 1px 1px 7px 2px rgb(33, 156, 140);
+			}
+			
+			.icon:active{
+				border-radius: 100%;
+				border: 4px solid #c1daa1;
+    			box-shadow: 1px 1px 7px 2px rgb(85, 247, 225);
+			}
+
+
 			body, input, textarea, select {
 				font-family: 'Open Sans', sans-serif;
 				font-weight: 400;
-				color: steelblue;		
+				color: steelblue;
+				padding-top: 0.888em;		
 			}
 			h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 				color: lightskyblue;
@@ -64,13 +90,17 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
+				<header id="header" style="margin-top:0;margin-bottom:0;padding-top:1em;padding-bottom:0.666em;">
 					<div class="logo container">
+						<aside style="top: -0.88em;left:10%;border-radius: 44px;">
+							<img src="./copyrightNetCinematics/imgz/prod/logos/nxlogo1_512x512.png" style="width:10%;margin-top: -2.444em;">
+						</aside>
 						<div style="top: -0.88em;border-radius: 44px;">
 							<h1><a href="index.html" id="logo">
 								<span style="font-size:0.44em; vertical-align: middle;">
 									<</span> | VIRTUA~WURLDZ | <span style="font-size:0.44em; vertical-align: middle;">></span></a></h1>
-									<h2>of</h2>
+									
+									<h2 style="text-transform:lowercase; font-size: 0.888em; font-style: italic; margin: 0; padding-top: 0.444em;">of</h2>
 							<p></p>
 						</div>
 					</div>
@@ -103,24 +133,101 @@
 					</ul>
 				</nav>
  -->
-			<!-- Banner -->
+			<!-- Banner 
 				<section id="banner">
-					<div class="content" style="padding:2em;">
+					<div class="content" style="padding: 0 2em 0.888em 2em;">
 						<h2>~ CRYPT<span style="font-weight:bold; font-size:2em;padding:0.0444em;">0</span>SPAZE ~</h2>
 						<p>... Digital Adventures ...</p>
 						<!-- TODO BYTEz, TXTz, SOL, ADA, -->
-						<a href="#main" class="button scrolly"><i class="fas fa-film" style="color:darkorange"></i>&nbsp;BYTEz</a>
-						<a href="/CRYPTOSPAZE/getNFTs/" class="button scrolly"><i class="fas fa-photo-video" style="color:darkseagreen"></i>&nbsp;CARDz</a>
-						<a href="#main" class="button scrolly"><i class="fas fa-book" style="color:lightskyblue"></i>&nbsp;HEROz</a>
-						<a href="#main" class="button scrolly"><i class="fas fa-music" style="color:mediumpurple"></i>&nbsp;JAMz</a>
-						<!-- <a href="#main" class="button scrolly"><i class="fas fa-book" style="color:lightskyblue"></i>&nbsp;TXTz</a> -->
-						<a href="#main" class="button scrolly"><i class="fas fa-video" style="color:indianred"></i>&nbsp;VIDz</a>
-						<!-- <a href="https://netcinematics.github.io/metaplex#/artworks" class="button scrolly">STOREFRONT</a> -->
+
+						<!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue"></i>&nbsp;TXTz</a> -->
+						<!-- <a href="https://netcinematics.github.io/metaplex#/artworks" class="button">STOREFRONT</a> 
 					</div>
+					<style>#mainNav1 a {margin: 1%;	width: 80%;opacity: 0.777;}</style>
+					<nav id="mainNav1">
+						<a href="#main" class="button"><i class="fas fa-film" style="color:darkorange"></i>&nbsp;BYTEz</a>
+						<a href="/CRYPTOSPAZE/getNFTs/" class="button"><i class="fas fa-photo-video" style="color:darkseagreen"></i>&nbsp;CARDz</a>
+						<a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue"></i>&nbsp;HEROz</a>
+						<a href="#main" class="button"><i class="fas fa-music" style="color:mediumpurple"></i>&nbsp;JAMz</a>
+						<a href="#main" class="button"><i class="fas fa-video" style="color:indianred"></i>&nbsp;VIDz</a>
+					</nav>
+				</section>-->
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content" style="padding: 0 2em 0.444em 2em;">
+						<h2>~ CRYPT<span style="font-weight:bold; font-size:2em;padding:0.0444em;margin-bottom: 0;">0</span>SPAZE ~</h2>
+						<p>... Digital Adventures ...</p>
+						<!-- TODO BYTEz, TXTz, SOL, ADA, -->
+
+						<!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue"></i>&nbsp;TXTz</a> -->
+						<!-- <a href="https://netcinematics.github.io/metaplex#/artworks" class="button">STOREFRONT</a> -->
+					</div>
+					<!-- <style>#mainNav1 a {margin: 1%;	width: 80%;opacity: 0.777;} #mainNav1 li{background:black;}</style> -->
+					<style>
+
+
+					flexFrame {
+						display: flex;
+						align-items: center;
+						justify-content: space-around;
+						width: 100%;
+						flex-wrap: wrap;
+						padding-top: 4.444%;
+					}
+					 
+					fxItem a {
+						min-width: 12em;
+						width: 15%;
+						text-align: center;
+						height: auto;
+					}
+
+					fxItem a:hover{
+						border-radius:13px;
+						border: 2px solid steelblue;
+						box-shadow: 1px 1px 7px 2px skyblue;
+					}
+
+					fxItem a:active{
+						border-radius:13px;
+						border: 3px solid #31c6ff;
+						box-shadow: 2px 2px 7px 2px rgb(72, 174, 214);
+					}
+
+					@media screen and (max-width: 900px) {
+						flexFrame {
+							flex-direction: column;
+						}
+						
+						fxItem {
+							width: 100%;
+							flex-direction: row;
+							align-items: center;
+							justify-content: flex-start;
+							margin-bottom: 0.5em;
+							max-width: 44.444%;
+    						opacity: 0.777;
+							min-width: 12em;
+						}
+						fxItem p {
+							padding: 0 0.5em;
+						}
+						
+					}
+					</style>
+					<nav id="mainNav1">
+						<flexFrame>
+						<fxItem><a href="#main" class="button"><i class="fas fa-film" style="color:darkorange"></i>&nbsp;BYTEz</a></fxItem>
+						<fxItem><a href="/CRYPTOSPAZE/getNFTs/" class="button"><i class="fas fa-photo-video" style="color:darkseagreen"></i>&nbsp;CARDz</a></fxItem>
+						<fxItem><a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue"></i>&nbsp;HEROz</a></fxItem>
+						<fxItem><a href="#main" class="button"><i class="fas fa-music" style="color:mediumpurple"></i>&nbsp;JAMz</a></fxItem>
+						<fxItem><a href="#main" class="button"><i class="fas fa-video" style="color:indianred"></i>&nbsp;VIDz</a></fxItem>
+						</flexFrame>
+					</nav>
 				</section>
 
 			<!-- Main -->
-				<section id="main" >
+				<section id="main" style="padding-top: 0.222em;" >
 					<div class="container">
 						<div class="row gtr-200">
 
@@ -129,7 +236,7 @@
 								<!-- Features -->
 									<section class="box features">
 										<header style="top:-1em">
-											<div><h2 class="major">~ CRYPT<span style="padding:0.0444em;font-size:2em;top:0;">0</span>BYTES ~</h2></div>
+											<div><h2 class="major" style="margin-bottom:2em">~ CRYPT<span style="padding:0.0444em;font-size:2em;top:0;">0</span>BYTES ~</h2></div>
 										</header>
 										<!-- <h2 class="major">~ ACRYPT<span style="padding:0.0444em;font-size:2em;top:0;">0</span>COZMOS ~</h2> -->
 										<div>
@@ -138,57 +245,59 @@
 
 													<!-- Feature -->
 														<section class="box feature">
-															<a href="#" class="image featured"><img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_eastridge4.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
-															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>SPAZE</a></h3>
-															<!-- <h3><a href="#">CRYPT0SPAZE</a></h3> -->
-															<!-- <h3><a href="#">COZMOSPAZE</a></h3> -->
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
-
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
-
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_orby_scope2.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
-															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>HEROZ</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
-
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
-
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_cryptotechno2.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
-															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>TECHNO</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
-
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
-
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured">
+															<a href="#" class="image featured hoverGlow">
 																<img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_cryptocardz3.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
 															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>CARDZ</a></h3>
 															<p>
-																Digital music. Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																Digital music.  quam turpis, feugiat sit amet ornare in, a hendrerit in
 																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
 															</p>
 														</section>
 
 												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured hoverGlow"><img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_orby_scope2.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
+															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>HEROZ</a></h3>
+															<p>
+																 quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured hoverGlow"><img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_cryptotechno2.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
+															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>HOUSE</a></h3>
+															<p>
+																 quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured hoverGlow"><img src="./copyrightNetCinematics/imgz/prod/bannerz/cryptobannerz_eastridge4.png" style="border: 2px solid #4c4c4c;" alt="" /></a>
+															<h3><a href="#">CRYPT<span style="font-size:2em;">0</span>WURLDZ</a></h3>
+															<!-- <h3><a href="#">CRYPT0SPAZE</a></h3> -->
+															<!-- <h3><a href="#">COZMOSPAZE</a></h3> -->
+															<p>
+																 quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+
+
 
 											<!-- Feature
 												<div class="col-3 col-6-medium col-12-small">
@@ -236,8 +345,8 @@
 
 												<div class="col-12">
 													<ul class="actions">
-														<li><a href="#" class="button large">NEW!</a></li>
-														<li><a href="#" class="button alt large">GET MERCH</a></li>
+														<li><a href="#" class="button large hoverGlow">NEW!</a></li>
+														<li><a href="#" class="button alt large hoverGlow">GET MERCH</a></li>
 													</ul>
 												</div>
 											</div>
@@ -356,11 +465,11 @@
 											<li><a class="icon brands fa-github" href="#"><span class="label">LinkedIn</span></a></li>
 										</ul>
 										<header>
-											<h2>FOLLOW the adventure</h2>
+											<h2>FOLLOW the adventure...</h2>
 											<p>Bookmark this page!</p>
 										</header>
 										<p>
-											Check out our AWESOME ADVENTURE across AUDIUS, INSTAGRAM, FACEBOOK, TWITTER, and YouTube!
+											Check out the BLOCKCHAIN~CINEMO across the METAVERSE: AUDIUS, INSTAGRAM, FACEBOOK, TWITTER, and YouTube!
 										</p>
 									</section>
 
@@ -374,7 +483,7 @@
 				</section>
 
 			<!-- Footer -->
-				<footer id="footer">
+				<footer id="footer" style="padding-bottom: 3.333em;">
 					<div class="container">
 						<div class="row gtr-200">
 							<div class="col-12">
@@ -383,35 +492,33 @@
 									<section>
 										<h2 class="major"><span>~NETCINEMO~</span></h2>
 										<p>
-											Introducing NETCINEMOs, from <strong>NETCINEMATICS</strong>. Enjoy the RIDE and... more EXCITING SPAZE~LEGENDZ from spazeFalcon!
-											For a sneak peek, check out GITHUB. NFT Videos are in constant PROGRESS! 
+											Introducing NETCINEMOs! Enjoy more EXCITING LEGENDZ from spazeFalcon!
+											NFT Videos are in constant PROGRESS! For a sneek-peek, check us out across the CRYPTO METAVERSE! 
 											Brand NEW, is a custom - NFT Web3 library! Open-source. Use it to GET NFTs! 
-											It is a Web3 CRYPTO Front-End, to interface all Web3 platforms! Couldn't be happier!
-											Currently we have NFTs randomly sprinkled between: ETH, MATIC, ADA, and SOL.
-											Should we be somewhere else? Let us know below!
-	<hr>										
-											Have you heard of "social-token"? Shhhh! spazeFalcon shares a (secrit). There is a PLAN, for a New NFT Use Case... in SEQUENCING.
-											spazeFalcon could not be more excited! Back to producing...
-<hr>
-											This DIGITAL-NOVEL is just getting started! Follow the adventure! 
-											What will happen next? Thanks for reading, spazeFanz! <honored>Honored</honored> 
-											~spazeFalcon-:) 
+											Or a Web3 CRYPTO Front-End, to interface all Web3 platforms! Guess the future - couldn't be happier! Awesome NFTs everywhere.
+											Currently, COZMOSPAZE NFTs are sprinkled randomly between: ETH, MATIC, ADA, and SOL.
+
 										</p>
 									</section>
-
 							</div>
 							<div class="col-12">
 
 								<!-- Contact -->
 									<section>
-										<h2 class="major"><span>Get in touch</span></h2>
-										<ul class="contact">
+										<h2 class="major"><span>from spazeFalcon</span></h2>
+										<p>Have you heard of "social-token"? Shhhh! spazeFalcon shares a (secret). A PLAN, for New NFT Use Case... in SEQUENCING the BLOCKCHAIN.
+											It will ROCK the CINEMOZ. spazeFalcon is thrilled! EP7 now, back to producing!
+</p><hr>
+										<p>This WEB3 powered - DIGITA~NOVEL -  is just getting started! Follow the adventure... 
+											What will happen next? Thank you for reading spazeFanz! <honored>Honored</honored> 
+											~spazeFalcon-:) </p>
+										<!-- <ul class="contact">
 											<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
 											<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
 											<li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
 											<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
 											<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-										</ul>
+										</ul> -->
 									</section>
 
 							</div>
@@ -420,12 +527,14 @@
 						<!-- Copyright -->
 							<div id="copyright">
 								<ul class="menu">
-									<li><script>document.write( new Date().getFullYear() );</script> &copy; NetCinematics llc. All rights reserved</li>
+									<li>2021 - <script>document.write( new Date().getFullYear() );</script> &copy; NetCinematics llc. All rights reserved</li>
 									<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									<li>Design: <a href="https://opensea.io/collection/cozmospaze">NFT API by OpenSea.io</a></li>
+									<li>NFT API: <a href="https://opensea.io/collection/cozmospaze">OpenSea.io</a></li>
 								</ul>
 								<ul class="menu" style="font-size:0.666em;">
-									<li><script>document.write( new Date().getFullYear() );</script> ~ OrbyOrbot&trade;, DocCozmo&trade;, Dr.Becky&trade;, MaxzaDratz&trade;, VirtuaWurldz&trade;, CozmoSpaze&trade;, Marzamoon&trade;, Crypt0spaze&trade;, Crypt0Bytez&trade;, Crypt0Legendz&trade;, Crypt0Heroz&trade;, Crypt0Cardz&trade;, Crypt0Techno&trade;, CryptoVidz&trade; ~ <script>document.write( new Date().getFullYear() );</script> </li>
+									<li style="line-height: 1.444em;padding-top: 1.666em;">  
+										2021 - <script>document.write( new Date().getFullYear() );</script>
+										 ~ OrbyOrbot&trade;, DocCozmo&trade;, Dr.Becky&trade;, MaxzaDratz&trade;, VirtuaWurldz&trade;, CozmoSpaze&trade;, Marzamoon&trade;, Crypt0spaze&trade;, DigitaNovel&trade;, BlockChain-Cinemo&trade;, Crypt0Bytez&trade;, Crypt0Legendz&trade;, Crypt0Heroz&trade;, Crypt0Cardz&trade;, Crypt0House&trade;, Crypt0Vidz&trade;, Crypt0Wurldz&trade; ~ <script>document.write( new Date().getFullYear() );</script> </li>
 								</ul>
 							</div>
 
@@ -437,7 +546,7 @@
 		<!-- Scripts 
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
