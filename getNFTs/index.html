@@ -21,10 +21,56 @@
     </style>
 </head>
 <body>
-    <script>
+
+<section style="padding: 0.444em;">
+    <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span>
+    <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
+    <button id="NavBtn2" class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-photo-video" style="color:lightskyblue">&nbsp;CARDz</i></a>
+    <button id="NavBtn3"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-book" style="color:darkseagreen">&nbsp;HEROz</i></a>
+    <button id="NavBtn4"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
+    <button id="NavBtn5"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
+    <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+     <!--<a href="#main" class="button"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
+    <!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
+</section>
+
+<section style="padding: 0.444em; font-size:0.888em;">
+    
+    <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px purple;">NFTs:</span>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i></a>
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+        
+</section>  
+<script>
+
+</script>
+<header style="padding:0.666em;">
+    <section>
+        <span style="    font-size:1.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;">NFT~COLLECTION:&nbsp;</span>
+        <span>___ALL____</span>
+    </section>
+    <section style="padding:0.777em;">
+        <span style="    font-size:1.222em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px white;">NFT~ARTIST:&nbsp;</span>
+        <span>___spazeFalcon___</span>
+    </section>
+    <section id="statusDisplay1" style="font-size: 0.666em;">rendering ETH NFTs from OpenSea.io</section>
+    <!-- <section id="statusDisplay1">< ~ ></section> -->
+</header>
+<article>
+    <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px;"> </section>
+</article>
 
 
-        </script>
 <section style="padding: 0.444em;">
     <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span>
     <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
@@ -56,24 +102,8 @@
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
         
 </section>  
-<script>
 
-</script>
-<header style="padding:0.666em;">
-    <section>
-        <span style="    font-size:1.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;">NFT~COLLECTION:&nbsp;</span>
-        <span>___ALL____</span>
-    </section>
-    <section style="padding:0.777em;">
-        <span style="    font-size:1.222em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px white;">NFT~ARTIST:&nbsp;</span>
-        <span>___spazeFalcon___</span>
-    </section>
-    <section id="statusDisplay1" style="font-size: 0.666em;">rendering ETH NFTs from OpenSea.</section>
-    <!-- <section id="statusDisplay1">< ~ ></section> -->
-</header>
-<article>
-    <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px;"> </section>
-</article>   
+
 </body>
 <script>
 // let mainView = null;
@@ -121,13 +151,29 @@ function initPage(){
         try{
             if (nftDisplay1) { nftDisplay1.innerHTML = ""; } //BLANK data view-.
             if(mode===2){  //cardz
-
+                fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmocardz',{method: 'GET'})
+                    .then(response => response.json())
+                    .then((data) => { //debugger; console.log(data);
+                        showNFTs(data.assets)
+                    })
+                    .catch(err => console.error(err));
             } else if(mode===3){  //heroz
 
+
             } else if(mode===4){  //jamz
-
+                fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmosonicz',{method: 'GET'})
+                    .then(response => response.json())
+                    .then((data) => { //debugger; console.log(data);
+                        showNFTs(data.assets)
+                    })
+                    .catch(err => console.error(err));
             } else if(mode===5){  //vidz
-
+                    fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmospaze',{method: 'GET'})
+                    .then(response => response.json())
+                    .then((data) => { //debugger; console.log(data);
+                        showNFTs(data.assets)
+                    })
+                    .catch(err => console.error(err));
             } else if(mode===6 || mode===12){ //DISPLAY ALL-.
                 //****************************************************************************
                 let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
