@@ -392,7 +392,11 @@ function initPage(){
 
 document.addEventListener("DOMContentLoaded", ()=>{
     initPage();
-    MainVw.getNFTFactory(6); //default load
+    //dynamic NFT loading-.
+    const urlParams = new URLSearchParams(window.location.search);
+    let mode = parseInt(urlParams.get('m'));
+    if(!mode){mode = 6}
+    MainVw.getNFTFactory(mode); //default load
 })
 </script>
 </html>
