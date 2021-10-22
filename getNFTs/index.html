@@ -18,6 +18,18 @@
             font-family: Verdana
         }
         .menuBtn:hover{ border-radius:10px; border:1px solid steelblue; cursor: pointer; }
+
+        .hoverGlow:hover{
+            border: 3px solid #8f7d71;
+            box-shadow: 1px 1px 7px 2px skyblue;
+        }
+
+        .hoverGlow:active{
+            border: 4px solid #e0b99f;
+            box-shadow: 2px 2px 7px 2px rgb(174, 216, 233);
+        }
+
+
     </style>
 </head>
 <body>
@@ -34,8 +46,8 @@
         <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
     <button id="NavBtn5"  class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
-    <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
-        <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+    <!-- <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a> -->
      <!--<a href="#main" class="button"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
     <!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
 </section>
@@ -67,12 +79,13 @@
     <!-- <section id="statusDisplay1">< ~ ></section> -->
 </header>
 <article>
-    <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px;"> </section>
+    <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px; max-width: 44em;"> </section>
 </article>
 
 
 <section style="padding: 0.444em;">
-    <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span>
+    <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
+    <BR>
     <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
     <button id="NavBtn2" class="menuBtn" onclick="menuFn(event)"}>
@@ -83,8 +96,8 @@
         <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
     <button id="NavBtn5"  class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
-    <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
-        <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+    <!-- <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
+        <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a> -->
      <!--<a href="#main" class="button"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
     <!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
 </section>
@@ -158,6 +171,23 @@ function initPage(){
                     })
                     .catch(err => console.error(err));
             } else if(mode===3){  //heroz
+
+
+                fetch('https://api.opensea.io/api/v1/assets?token_ids=32091639769859466206787752406743660124435242419967811135209154760744716206081&order_direction=desc&offset=0&limit=20',{method: 'GET'})
+                .then(response => response.json())                    
+                .then((data) => { //debugger; console.log(data);
+                        showNFTs(data.assets)
+                    })
+                .catch(err => console.error(err));
+
+                fetch('https://api.opensea.io/api/v1/assets?token_ids=32091639769859466206787752406743660124435242419967811135209154750849111556097&order_direction=desc&offset=0&limit=20',{method: 'GET'})
+                .then(response => response.json())                    
+                .then((data) => { //debugger; console.log(data);
+                        showNFTs(data.assets)
+                    })
+                .catch(err => console.error(err));
+
+
 
 
             } else if(mode===4){  //jamz
@@ -236,6 +266,15 @@ function initPage(){
           RETURN DATA   */ 
     }
 /***************************************************************************************************\
+ * METADATA - OVERRIDE : Populate META by ID lookup, then override LINKS and other behaviors. - : )
+\***************************************************************************************************/  
+const METANET = { //ATTRIBUTE OVERRIDES BY TOKEN ID, 
+    '42606445':{TR:'#1',UP:'SONICZ',TL:'2021',BL:'/',DWN:'DWN',BR:{url:'https://opensea.io/accounts/virtuawurldz'}}
+};
+function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id];}}  
+//set meta data onto token nft of matching id, to configure super and sub titles.
+
+/***************************************************************************************************\
  * HIDEDATA or OVERRIDEDATA - use tgt keys to HIDE items here-. Or change them. - : )
 \***************************************************************************************************/
     let HIDENFTTGTs = [{key:'id',tgt:'268592'},{key:'id',tgt:'91019'}]
@@ -271,38 +310,96 @@ function initPage(){
         }          
     }
     function createArtCard(nft){
+        //BUILD ARTCARD DISPLAY
         let artFrame = document.createElement('section');
         artFrame.style.backgroundColor = 'black';
         let artCard = document.createElement('article');
         artCard.style.backgroundColor = getRandoColor();
         artCard.style.border = "1px solid steelblue"
-        artCard.style.borderRadius = "13px"
+        artCard.style.borderRadius = "13.333px"
         artCard.style.padding = "0.888em"
         artCard.style.margin = "0.88em auto"
         artCard.style.maxWidth = "36em"
+        //CARD IMG
         let artCardIMG = document.createElement('img'); //IMG
         artCardIMG.style.padding = "0.888em"
         artCardIMG.style.width = "88.8%"
         artCardIMG.style.maxWidth = "33em"
         artCardIMG.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
-        artCardIMG.style.borderRadius = "4px"
+        artCardIMG.style.borderRadius = "6.666px"
         artCardIMG.style.marginBottom = "1em"
         artCardIMG.src = nft.image_url;   //large 600 size  //OTHER IMAGE TYPES HERE:
         // artCardIMG.src = nft.image_original_url; //giant original size
         // artCardIMG.src = nft.image_preview_url;      //medium 350 size
         // artCardIMG.src = nft.image_thumbnail_url;   //small 200 size
-        artCard.insertAdjacentElement('afterbegin', artCardIMG);
-        let artCardSuperTitle = document.createElement('section'); //Title 1
-        artCardSuperTitle.style.padding = "0.444em"
-        artCardSuperTitle.style.borderRadius = "13px"
-        artCardSuperTitle.style.border = "1px solid steelblue"
-        artCardSuperTitle.innerText = nft.name; //NAME
-        artCardSuperTitle.style.backgroundColor = "#05112a"
+        artCardSND = document.createElement('video'); //MP3
+        artCardSND.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
+        artCardSND.style.padding = "0.888em"
+        artCardSND.style.width = "100%"
+        artCardSND.style.maxWidth = "28em"
+        artCardSND.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
+        artCardSND.style.borderRadius = "6.666px"
+        artCardSND.style.marginBottom = "1em"
+        artCardSND.style.maxHeight = "55px"
+        artCardSND.controls = true;
+        // debugger;
+        // let artCardLINK = document.createElement('a'); //IMG LINK parent
+        // artCard.src = nft.url
+        //MAINTITLE
+        let artCardMainTitle = document.createElement('section'); //Title 1
+        artCardMainTitle.style.padding = "0.444em"
+        artCardMainTitle.style.borderRadius = "13px"
+        artCardMainTitle.style.border = "1px solid steelblue"
+        artCardMainTitle.innerText = nft.name; //NAME
+        artCardMainTitle.style.backgroundColor = "#05112a"
+        //SUBTITLE
         let artCardSubTitle = document.createElement('section'); //Title 2
         artCardSubTitle.style.padding = "0.111em"
-        artCardSubTitle.innerText = "..."; //NAME
         artCardSubTitle.style.textShadow = "1px 2px 1px black";
-        if (artCard) { artCard.insertAdjacentElement('beforeend',artCardSuperTitle); }
+        artCardSubTitle.style.display = "flex";
+        artCardSubTitle.style.justifyContent = "space-between";
+        //THREE-PART-SUB-TITLE
+        let BR = document.createElement('aside'); //sub
+        let DWN = document.createElement('aside'); //sub
+        let BL = document.createElement('aside'); //sub
+        BR.innerHTML = "<span>\\</span>"
+        DWN.innerHTML = "<span>~</span>"
+        BL.innerHTML = "<span>/</span>"
+        //SUPERTITLE
+        let artCardSuperTitle = document.createElement('section'); //Title 2
+        artCardSuperTitle.style.padding = "0.111em"
+        artCardSuperTitle.style.textShadow = "1px 2px 1px black";
+        artCardSuperTitle.style.display = "flex";
+        artCardSuperTitle.style.justifyContent = "space-between";
+        //THREE-PART-SUPER-TITLE
+        let TR = document.createElement('aside'); //super
+        let UP = document.createElement('aside'); //super
+        let TL = document.createElement('aside'); //super
+        TR.innerHTML = "<span>\\</span>"
+        UP.innerHTML = "<span>^</span>"
+        TL.innerHTML = "<span>/</span>"
+        // debugger;
+        setMETA(nft)
+        if(nft.meta){ //loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}) }
+            //for(nftLink of nft.meta) //TODO
+            // if(nft.meta.TL){ (nft.meta..url)?  .innerHTML=`<a href="" target="_blank"><img src=""/></a>`          :TL.innerHTML = nft.meta.TL}
+            // if(nft.meta.UP){ (nft.meta..url)?  .innerHTML=`<a href="" target="_blank"><img src=""/></a>`          :UP.innerHTML = nft.meta.UP}
+            // if(nft.meta.TR){ (nft.meta..url)?  .innerHTML=`<a href="" target="_blank"><img src=""/></a>`          :TR.innerHTML = nft.meta.TR}
+            // if(nft.meta.BL) (nft.meta..url)?  .innerHTML=`<a href="" target="_blank"><img src=""/></a>`          :{BL.innerHTML = nft.meta.BL}
+            // if(nft.meta.DWN){ (nft.meta..url)?  .innerHTML=`<a href="" target="_blank"><img src=""/></a>`          :DWN.innerHTML = nft.meta.DWN}
+            if(nft.meta.BR){ (nft.meta.BR.url) ? getIconLink(BR, nft.meta.BR.url) : BR.innerHTML = nft.meta.BR}
+        }
+        //INSERT INTO DOM-.
+        if (artCard) { artCard.insertAdjacentElement('afterbegin', artCardSND); }
+        if (artCard) { artCard.insertAdjacentElement('afterbegin', artCardIMG); }
+        if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',TR); }
+        if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',UP); }
+        if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',TL); }
+        if (artCard) { artCard.insertAdjacentElement('afterbegin',artCardSuperTitle); }
+        if (artCardSubTitle) { artCardSubTitle.insertAdjacentElement('beforeend',BL); }
+        if (artCardSubTitle) { artCardSubTitle.insertAdjacentElement('beforeend',DWN); }
+        if (artCardSubTitle) { artCardSubTitle.insertAdjacentElement('beforeend',BR); }
+        if (artCard) { artCard.insertAdjacentElement('beforeend',artCardMainTitle); }
         if (artCard) { artCard.insertAdjacentElement('beforeend',artCardSubTitle); }
         if (artFrame && artCard) { artFrame.insertAdjacentElement('beforeend', artCard); }
         if (nftDisplay1) { nftDisplay1.insertAdjacentElement('beforeend', artFrame); }
@@ -335,17 +432,17 @@ function initPage(){
         // artCardIMG.src = nftCollection.image_thumbnail_url;   //small 200 size
         artCard.insertAdjacentElement('afterbegin', artCardIMG1);
         artCard.insertAdjacentElement('afterbegin', artCardIMG2);
-        let artCardSuperTitle = document.createElement('section'); //Title 1
-        artCardSuperTitle.style.padding = "0.444em"
-        artCardSuperTitle.style.borderRadius = "13px"
-        artCardSuperTitle.style.border = "1px solid steelblue"
-        artCardSuperTitle.innerText = nftCollection.name; //NAME
-        artCardSuperTitle.style.backgroundColor = "#05112a"
+        let artCardMainTitle = document.createElement('section'); //Title 1
+        artCardMainTitle.style.padding = "0.444em"
+        artCardMainTitle.style.borderRadius = "13px"
+        artCardMainTitle.style.border = "1px solid steelblue"
+        artCardMainTitle.innerText = nftCollection.name; //NAME
+        artCardMainTitle.style.backgroundColor = "#05112a"
         let artCardSubTitle = document.createElement('section'); //Title 2
         artCardSubTitle.style.padding = "0.111em"
         artCardSubTitle.innerText = "..."; //NAME
         artCardSubTitle.style.textShadow = "1px 2px 1px black";
-        if (artCard) { artCard.insertAdjacentElement('beforeend',artCardSuperTitle); }
+        if (artCard) { artCard.insertAdjacentElement('beforeend',artCardMainTitle); }
         if (artCard) { artCard.insertAdjacentElement('beforeend',artCardSubTitle); }
         if (artFrame && artCard) { artFrame.insertAdjacentElement('beforeend', artCard); }
         if (nftDisplay1) { nftDisplay1.insertAdjacentElement('beforeend', artFrame); }
@@ -359,9 +456,16 @@ function initPage(){
         const l = Math.floor(Math.random() * 88); //100
         return `hsl(${h}deg, ${s}%, ${l}%)`;
     }
-/***************************************************************************************************\
- * UI interface - all types of UX/HMI/GUI userInterfaceFunctions here-. - : )
-\***************************************************************************************************/    
+   
+    function getIconLink(node, url){
+        node.style.marginTop = "-1.555em";
+        return node.innerHTML=`<a href="${url}" target="_blank"><img src="../images/osblue.png" class="hoverGlow" style="width:2em;border-radius:100%;"/></a>`          
+    }
+// function loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}){
+//     if(nft.id && METANET[nft.id]){
+
+//     }
+// }  
     // getNFTBtn.addEventListener('click',()=>{  //debugger;   //GET-NFT-BUTTON!
         //***********************************************************//OpenSea API : getNFT (single)
 //     statusDisplay1.innerHTML = "TEST";
