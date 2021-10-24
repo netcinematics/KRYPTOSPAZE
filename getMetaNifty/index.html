@@ -30,6 +30,17 @@
         }
 
 
+        .hoverGlowPlay:hover{
+            border: 1px solid #8f7d71;
+            /* box-shadow: 1px 1px 7px 2px skyblue; */
+        }
+
+        .hoverGlowPlay:active{
+            border: 1px solid #e0b99f;
+            /* box-shadow: 2px 2px 7px 2px rgb(174, 216, 233); */
+        }
+
+
     </style>
 </head>
 <body>
@@ -301,14 +312,12 @@ function initNIFTY(nft){
     if(!nft || !nft.meta){return;} //inversion error trap, clean up code above, in factory.
     if(nft.meta.main){ // MAIN - meta configurations
         if(nft.meta.main.snd===1){ //lookup nft data, for meta display
-            debugger;
             nft.meta.main.snd = nft.animation_url;
             //         animation_original_url: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
             // animation_url: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
             // permalink: "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/32091639769859466206787752406743660124435242419967811135209154766242274344961"
         } else 
         if(nft.meta.main.vid){
-            debugger;
             nft.meta.main.vid = nft.animation_url; //signal meta display
         }
     }
@@ -325,7 +334,6 @@ function initNIFTY(nft){
     function showNFTs(assets){ //debugger; //TODO switch by DISPLAY-FACTORY-. RENAME showNIFTYactory
         // let hidden = 0 //TODO : move this to initNIFTY()
         for(let nft of assets){ //console.log("displaying",nft.id)
-        debugger;
             console.log("RENDER: ", nft.id, nft.name)
             setMETA(nft)
             initNIFTY(nft) //HYPERTEXT_META_SEQUENCEs-above-the NIFTY_NET.
@@ -380,6 +388,7 @@ function initNIFTY(nft){
         artCardIMG.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
         artCardIMG.style.borderRadius = "6.666px"
         artCardIMG.style.marginBottom = "1em"
+        artCardIMG.style.zIndex = "9"
         artCardIMG.src = nft.image_url;   //large 600 size  //OTHER IMAGE TYPES HERE:
         // artCardIMG.src = nft.image_original_url; //giant original size
         // artCardIMG.src = nft.image_preview_url;      //medium 350 size
@@ -387,6 +396,7 @@ function initNIFTY(nft){
 
         // debugger;
         let artCardVID = null;
+        let artCardVIDBTN = null;
         if(nft.meta.main.vid){ //SOUND-FLAG, render AUDIO-DISPLAY
             artCardVID = document.createElement('video'); //MP3
             artCardVID.src = nft.meta.main.vid; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
@@ -399,7 +409,30 @@ function initNIFTY(nft){
             artCardVID.style.marginBottom = "1em"
             // artCardVID.style.maxHeight = "55px"
             artCardVID.controls = true;
+            artCardVID.style.display = 'none';
             // artCardIMG = null; //do not show art card default
+            artCardVIDBTN = document.createElement('section')
+            artCardVIDBTN.innerHTML = `<div class="hoverGlowPlay" style="border-radius:100%; background:grey; padding: 0.444em;box-shadow:-2px 0px 2px 2px deepskyblue;">
+                <i class="fas fa-play" style="font-size:2em;color:white;border:1px solid skyblue;border-radius:100%;padding:0.2em;"></i>
+                </div>`
+            // artCardVIDBTN.style.cssText = "background: none; border: 0px;"
+            // artCardVIDBTN.style.zIndex = "10"
+            artCardVIDBTN.style.display = 'flex';
+            artCardVIDBTN.style.marginTop = "-5em";
+            artCardVIDBTN.style.marginLeft = "1em";
+            // artCardVIDBTN.style.backgroundColor = "grey";
+            artCardVIDBTN.style.borderRadius = "100%";
+            artCardVIDBTN.addEventListener("click", ()=> {
+                let vidz = document.getElementsByTagName('video') //stop all other vids
+                for(vid of vidz){ vid.pause() }
+                artCardVIDBTN.style.display = 'none';
+                // artCardIMG.style.display = 'none'
+                artCardIMG.style.cssText = 'height:12em;width:auto'
+                artCardVID.style.display = '';
+                artCardVID.play();
+            })
+            // artCardVIDBTN.classList.add("hoverGlowPlay");
+
         }
 
 
@@ -454,7 +487,7 @@ function initNIFTY(nft){
         TR.innerHTML = "<span>\\</span>"
         UP.innerHTML = `<span>${nft.id}</span>`
         TL.innerHTML = "<span>2021</span>"
-        debugger; //METACARD useMETA for display
+        // debugger; //METACARD useMETA for display
         //setMETA(nft)
 
         if(nft.meta){ //loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}) }
@@ -469,6 +502,7 @@ function initNIFTY(nft){
         //INSERT INTO DOM-.
         if (artCard && artCardVID) { artCard.insertAdjacentElement('afterbegin', artCardVID); }
         if (artCard && artCardSND) { artCard.insertAdjacentElement('afterbegin', artCardSND); }
+        if (artCard && artCardVIDBTN) { artCard.insertAdjacentElement('afterbegin', artCardVIDBTN); }
         if (artCard && artCardIMG) { artCard.insertAdjacentElement('afterbegin', artCardIMG); }
         if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',TR); }
         if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',UP); }
