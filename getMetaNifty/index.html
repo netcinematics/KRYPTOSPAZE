@@ -183,7 +183,7 @@ function initPage(){
                 else{ //fetch singular NFT
                     fetch(`https://api.opensea.io/api/v1/asset/${keys.a_c_a}/${keys.t_id}/`,{method: 'GET'})
                     .then(response => response.json())
-                    .then((data) => { //debugger; console.log(data);
+                    .then((data) => { debugger; console.log(data);
                         showNFTs([data]) //singular item-.
                     })
                     .catch(err => console.error(err));
@@ -199,8 +199,6 @@ function initPage(){
                     .catch(err => console.error(err));
             } else 
             if(mode===3){  //heroz
-
-
 
                 //just lukkee dargon
                 fetch('https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/32091639769859466206787752406743660124435242419967811135209154770640320856065/',{method: 'GET'})
