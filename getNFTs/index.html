@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
-    <title>CRYPT0SPAZE</title>    
+    <title>KRYPT0SPAZE</title>    
     <style>
         .fas::after { font-family: Verdana}
         *, ::before, ::after { box-sizing: border-box; }
@@ -186,9 +186,6 @@ function initPage(){
                         showNFTs(data.assets)
                     })
                 .catch(err => console.error(err));
-
-
-
 
             } else if(mode===4){  //jamz
                 fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmosonicz',{method: 'GET'})
@@ -375,10 +372,9 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
         let TR = document.createElement('aside'); //super
         let UP = document.createElement('aside'); //super
         let TL = document.createElement('aside'); //super
-        TR.innerHTML = "<span>\\</span>"
+        TR.innerHTML = "<span>\\</span>" //layout for extra metadata
         UP.innerHTML = "<span>^</span>"
         TL.innerHTML = "<span>/</span>"
-        // debugger;
         setMETA(nft)
         if(nft.meta){ //loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}) }
             //for(nftLink of nft.meta) //TODO
@@ -489,9 +485,6 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
     //     statusDisplay1.innerHTML = "ERROR"+" no signal."; //e.message;
     // }
 
-
-//         alert('ok')
-    //START: INIT METAMASK BUTTON-.
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
