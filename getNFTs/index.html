@@ -28,8 +28,6 @@
             border: 4px solid #e0b99f;
             box-shadow: 2px 2px 7px 2px rgb(174, 216, 233);
         }
-
-
     </style>
 </head>
 <body>
@@ -51,17 +49,14 @@
      <!--<a href="#main" class="button"><i class="fas fa-film" style="color:darkorange">&nbsp;</i>BYTEz</a> -->
     <!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
 </section>
-
 <section style="padding: 0.444em; font-size:0.888em;">
-    
     <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px purple;">NFTs:</span>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
-        
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>    
 </section>  
 <script>
 
@@ -82,7 +77,6 @@
     <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px; max-width: 44em;"> </section>
 </article>
 
-
 <section style="padding: 0.444em;">
     <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
     <BR>
@@ -102,20 +96,15 @@
     <!-- <a href="#main" class="button"><i class="fas fa-book" style="color:lightskyblue">&nbsp;</i>TXTz</a> -->
 </section>
     
-
-
 <section style="padding: 0.444em; font-size:0.888em;">
-    
     <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px purple;">NFTs:</span>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i></a>
     <a href="#main" class="button"><i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
-        
+    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>      
 </section>  
-
 
 </body>
 <script>
@@ -171,7 +160,6 @@ function initPage(){
                     })
                     .catch(err => console.error(err));
             } else if(mode===3){  //heroz
-
 
                 fetch('https://api.opensea.io/api/v1/assets?token_ids=32091639769859466206787752406743660124435242419967811135209154760744716206081&order_direction=desc&offset=0&limit=20',{method: 'GET'})
                 .then(response => response.json())                    
