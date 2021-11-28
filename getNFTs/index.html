@@ -318,7 +318,7 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
         // artCardIMG.src = nft.image_preview_url;      //medium 350 size
         // artCardIMG.src = nft.image_thumbnail_url;   //small 200 size
         let artCardVID = null;
-        if(nft.animation_original_url.indexOf('mp4')>0){
+        if(nft.animation_original_url && nft.animation_original_url.indexOf('mp4')>0){
             artCardVID = document.createElement('video'); //MP4
             artCardVID.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp4"
             artCardVID.style.padding = "0.888em"
@@ -336,7 +336,7 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             });
         }
         let artCardSND = null;
-        if(nft.animation_original_url.indexOf('mp3')>0){
+        if(nft.animation_original_url && nft.animation_original_url.indexOf('mp3')>0){
             artCardSND = document.createElement('video'); //MP3
             artCardSND.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
             artCardSND.style.padding = "0.888em"
