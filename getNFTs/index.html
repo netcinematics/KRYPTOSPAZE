@@ -321,8 +321,19 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVID.style.marginBottom = "1em"
             artCardVID.style.maxHeight = "55px"
             artCardVID.controls = true;
-            artCardVIDFRM.style.width = "100%"
-            artCardVIDFRM.style.height = "100%"
+//             artCardVIDFRM.style.width = "100%"
+//             artCardVIDFRM.style.height = "100%"
+            artCardVIDFRM.style.width: "88%"
+            artCardVIDFRM.style.height: "36px"
+            artCardVIDFRM.style.background: "black"
+            artCardVIDFRM.style.borderRadius: "13px"
+            artCardVIDFRM.style.margin: "0.5em auto"
+            artCardVIDFRM.style.paddingTop: "8px"
+            artCardVIDFRM.style.cursor: "pointer"  
+            artCardVIDFRM.innerHTML = "<i class="fas fa-play"></i>"
+            
+            
+            
             artCardVIDFRM.addEventListener('onclick',()=>{
 
 //             artCardVID.onclick = ()=>{
