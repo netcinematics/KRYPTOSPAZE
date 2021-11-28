@@ -329,7 +329,7 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVID.style.marginBottom = "1em"
             artCardVID.style.maxHeight = "55px"
             artCardVID.controls = true;
-            artCardVID.addEventListener('click',()=>{
+            artCardVID.addEventListener('onclick',()=>{
                 debugger; //SHOW VIDEO, hide IMG
                 artCardIMG.style.display = "none"
                 artCardVID.style.maxHeight = "88px"
