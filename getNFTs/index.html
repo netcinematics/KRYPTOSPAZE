@@ -23,7 +23,6 @@
             border: 3px solid #8f7d71;
             box-shadow: 1px 1px 7px 2px skyblue;
         }
-
         .hoverGlow:active{
             border: 4px solid #e0b99f;
             box-shadow: 2px 2px 7px 2px rgb(174, 216, 233);
@@ -33,7 +32,6 @@
 <body>
 
 <section style="padding: 0.444em;">
-    <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
     <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
     <button id="NavBtn2" class="menuBtn" onclick="menuFn(event)"}>
@@ -71,14 +69,12 @@
         <span>___spazeFalcon___</span>
     </section>
     <section id="statusDisplay1" style="font-size: 0.666em;">rendering ETH NFTs from OpenSea.io</section>
-    <!-- <section id="statusDisplay1">< ~ ></section> -->
 </header>
 <article>
     <section id="nftDisplay1" style="padding:0.222em; border:1px solid darkslateblue; border-radius:13px; width:85%; margin:0 auto; border-radius:22px; max-width: 44em;"> </section>
 </article>
 
 <section style="padding: 0.444em;">
-    <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
     <BR>
     <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
@@ -108,10 +104,7 @@
 
 </body>
 <script>
-// let mainView = null;
-// const loginButton = document.getElementById('loginBtn')
 const nftDisplay1 = document.getElementById('nftDisplay1')
-// const statusDisplay1 = document.getElementById('statusDisplay1')
 class MainVw {
     constructor(account){
         this.userAccount = account;
@@ -143,9 +136,6 @@ function menuFn(e){ //ALL MENU BEHAVIOR in 1 FACTORY fn.
 }
 
 function initPage(){
-/***************************************************************************************************\
- * META - ability for page to override and change dynamically-. - : )
-\***************************************************************************************************/
 /***************************************************************************************************\
  * GETDATA - all types of data requestFunctions here-. - : )
 \***************************************************************************************************/
@@ -318,7 +308,9 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
         // artCardIMG.src = nft.image_preview_url;      //medium 350 size
         // artCardIMG.src = nft.image_thumbnail_url;   //small 200 size
         let artCardVID = null;
+        let artCardVIDFRM = null;
         if(nft.animation_original_url && nft.animation_original_url.indexOf('mp4')>0){
+            artCardVIDFRM = document.createElement('section')
             artCardVID = document.createElement('video'); //MP4
             artCardVID.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp4"
             artCardVID.style.padding = "0.888em"
@@ -329,21 +321,15 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVID.style.marginBottom = "1em"
             artCardVID.style.maxHeight = "55px"
             artCardVID.controls = true;
-//             artCardVID.addEventListener('onclick',()=>{
-            artCardVID.addEventListener(
-            'play', 
-            function() { 
-                debugger;
-            }, 
-            false);
-            
-            
-            artCardVID.onclick = ()=>{
+            artCardVIDFRM.addEventListener('onclick',()=>{
+
+//             artCardVID.onclick = ()=>{
                 debugger; //SHOW VIDEO, hide IMG
                 artCardIMG.style.display = "none"
                 artCardVID.style.maxHeight = "none"
-            }
-//             });
+//             }
+            });
+            artCardVIDFRM.insertAdjacentElement('afterbegin', artCardVID);
         }
         let artCardSND = null;
         if(nft.animation_original_url && nft.animation_original_url.indexOf('mp3')>0){
@@ -404,7 +390,7 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             if(nft.meta.BR){ (nft.meta.BR.url) ? getIconLink(BR, nft.meta.BR.url) : BR.innerHTML = nft.meta.BR}
         }
         //INSERT INTO DOM-.
-        if (artCard && artCardVID) { artCard.insertAdjacentElement('afterbegin', artCardVID); }
+        if (artCard && artCardVID) { artCard.insertAdjacentElement('afterbegin', artCardVIDFRM); }
         if (artCard && artCardSND) { artCard.insertAdjacentElement('afterbegin', artCardSND); }
         if (artCard) { artCard.insertAdjacentElement('afterbegin', artCardIMG); }
         if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',TR); }
