@@ -329,18 +329,38 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
         // artCardIMG.src = nft.image_original_url; //giant original size
         // artCardIMG.src = nft.image_preview_url;      //medium 350 size
         // artCardIMG.src = nft.image_thumbnail_url;   //small 200 size
-        artCardSND = document.createElement('video'); //MP3
-        artCardSND.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
-        artCardSND.style.padding = "0.888em"
-        artCardSND.style.width = "100%"
-        artCardSND.style.maxWidth = "28em"
-        artCardSND.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
-        artCardSND.style.borderRadius = "6.666px"
-        artCardSND.style.marginBottom = "1em"
-        artCardSND.style.maxHeight = "55px"
-        artCardSND.controls = true;
-        // debugger;
-        // let artCardLINK = document.createElement('a'); //IMG LINK parent
+        let artCardVID = null;
+        if(nft.animation_original_url.indexOf('mp4')>0){
+            artCardVID = document.createElement('video'); //MP4
+            artCardVID.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp4"
+            artCardVID.style.padding = "0.888em"
+            artCardVID.style.width = "100%"
+            artCardVID.style.maxWidth = "28em"
+            artCardVID.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
+            artCardVID.style.borderRadius = "6.666px"
+            artCardVID.style.marginBottom = "1em"
+            artCardVID.style.maxHeight = "55px"
+            artCardVID.controls = true;
+            artCardVID.addEventListener('click',()=>{
+                debugger; //SHOW VIDEO, hide IMG
+                artCardIMG.style.display = "none"
+                artCardVID.style.maxHeight = "88px"
+            });
+        }
+        let artCardSND = null;
+        if(nft.animation_original_url.indexOf('mp3')>0){
+            artCardSND = document.createElement('video'); //MP3
+            artCardSND.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp3"
+            artCardSND.style.padding = "0.888em"
+            artCardSND.style.width = "100%"
+            artCardSND.style.maxWidth = "28em"
+            artCardSND.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
+            artCardSND.style.borderRadius = "6.666px"
+            artCardSND.style.marginBottom = "1em"
+            artCardSND.style.maxHeight = "55px"
+            artCardSND.controls = true;
+        }
+        // let artCardLINK = document.createElement('a'); //IMG LINK parent TODO
         // artCard.src = nft.url
         //MAINTITLE
         let artCardMainTitle = document.createElement('section'); //Title 1
@@ -386,7 +406,8 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             if(nft.meta.BR){ (nft.meta.BR.url) ? getIconLink(BR, nft.meta.BR.url) : BR.innerHTML = nft.meta.BR}
         }
         //INSERT INTO DOM-.
-        if (artCard) { artCard.insertAdjacentElement('afterbegin', artCardSND); }
+        if (artCard && artCardVID) { artCard.insertAdjacentElement('afterbegin', artCardVID); }
+        if (artCard && artCardSND) { artCard.insertAdjacentElement('afterbegin', artCardSND); }
         if (artCard) { artCard.insertAdjacentElement('afterbegin', artCardIMG); }
         if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',TR); }
         if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',UP); }
@@ -457,14 +478,14 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
         node.style.marginTop = "-1.555em";
         return node.innerHTML=`<a href="${url}" target="_blank"><img src="../images/osblue.png" class="hoverGlow" style="width:2em;border-radius:100%;"/></a>`          
     }
-// function loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}){
-//     if(nft.id && METANET[nft.id]){
+    // function loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}){
+    //     if(nft.id && METANET[nft.id]){
 
-//     }
-// }  
+    //     }
+    // }  
     // getNFTBtn.addEventListener('click',()=>{  //debugger;   //GET-NFT-BUTTON!
         //***********************************************************//OpenSea API : getNFT (single)
-//     statusDisplay1.innerHTML = "TEST";
+    //     statusDisplay1.innerHTML = "TEST";
     
     // try{
     //     let getNFTbyContractAndToken={  //GETNFT by Contract and tokenId.
