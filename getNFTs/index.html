@@ -313,6 +313,7 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVIDFRM = document.createElement('section')
             artCardVID = document.createElement('video'); //MP4
             artCardVID.src = nft.animation_original_url; //: "https://storage.opensea.io/files/2917253280b68adf480bbb4493d881c3.mp4"
+            artCardVID.style.display = "none"
             artCardVID.style.padding = "0.888em"
             artCardVID.style.width = "100%"
             artCardVID.style.maxWidth = "28em"
@@ -339,6 +340,7 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
 //             artCardVID.onclick = ()=>{
                 debugger; //SHOW VIDEO, hide IMG
                 artCardIMG.style.display = "none"
+                artCardVID.style.display = "block"
                 artCardVID.style.maxHeight = "none"
 //             }
             });
@@ -403,7 +405,8 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             if(nft.meta.BR){ (nft.meta.BR.url) ? getIconLink(BR, nft.meta.BR.url) : BR.innerHTML = nft.meta.BR}
         }
         //INSERT INTO DOM-.
-        if (artCard && artCardVID) { artCard.insertAdjacentElement('afterbegin', artCardVIDFRM); }
+        if (artCard && artCardVIDFRM) { artCard.insertAdjacentElement('afterbegin', artCardVIDFRM); }        
+        if (artCard && artCardVID) { artCard.insertAdjacentElement('afterbegin', artCardVID); }
         if (artCard && artCardSND) { artCard.insertAdjacentElement('afterbegin', artCardSND); }
         if (artCard) { artCard.insertAdjacentElement('afterbegin', artCardIMG); }
         if (artCardSuperTitle) { artCardSuperTitle.insertAdjacentElement('beforeend',TR); }
