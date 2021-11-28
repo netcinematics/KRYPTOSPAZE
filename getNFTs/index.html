@@ -329,11 +329,13 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVID.style.marginBottom = "1em"
             artCardVID.style.maxHeight = "55px"
             artCardVID.controls = true;
-            artCardVID.addEventListener('onclick',()=>{
+//             artCardVID.addEventListener('onclick',()=>{
+            artCardVID.onclick = ()=>{
                 debugger; //SHOW VIDEO, hide IMG
                 artCardIMG.style.display = "none"
                 artCardVID.style.maxHeight = "88px"
-            });
+            }
+//             });
         }
         let artCardSND = null;
         if(nft.animation_original_url && nft.animation_original_url.indexOf('mp3')>0){
