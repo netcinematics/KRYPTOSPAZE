@@ -330,10 +330,18 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVID.style.maxHeight = "55px"
             artCardVID.controls = true;
 //             artCardVID.addEventListener('onclick',()=>{
+            artCardVID.addEventListener(
+            'play', 
+            function() { 
+                debugger;
+            }, 
+            false);
+            
+            
             artCardVID.onclick = ()=>{
                 debugger; //SHOW VIDEO, hide IMG
                 artCardIMG.style.display = "none"
-                artCardVID.style.maxHeight = "88px"
+                artCardVID.style.maxHeight = "none"
             }
 //             });
         }
