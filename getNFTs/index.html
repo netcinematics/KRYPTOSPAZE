@@ -319,11 +319,10 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVID.style.maxWidth = "28em"
             artCardVID.style.boxShadow = `2px 2px 8px 4px ${getRandoColor()}`
             artCardVID.style.borderRadius = "6.666px"
-            artCardVID.style.marginBottom = "1em"
-            artCardVID.style.maxHeight = "55px"
+//             artCardVID.style.marginBottom = "1em"
+//             artCardVID.style.maxHeight = "55px"
+            artCardVID.style.margin = "22px auto;"
             artCardVID.controls = true;
-//             artCardVIDFRM.style.width = "100%"
-//             artCardVIDFRM.style.height = "100%"
             artCardVIDFRM.style.width = "88%"
             artCardVIDFRM.style.height = "36px"
             artCardVIDFRM.style.background = "black"
@@ -332,19 +331,12 @@ function setMETA(nft){ if(nft.id && METANET[nft.id]){ nft.meta = METANET[nft.id]
             artCardVIDFRM.style.paddingTop = "8px"
             artCardVIDFRM.style.cursor = "pointer"  
             artCardVIDFRM.innerHTML = '<i class="fas fa-play"></i>'
-            
-            
-            
-            artCardVIDFRM.addEventListener('click',()=>{
-
-//             artCardVID.onclick = ()=>{
-                debugger; //SHOW VIDEO, hide IMG
+            artCardVIDFRM.addEventListener('click',()=>{ //debugger; //SHOW VIDEO, hide IMG
                 artCardIMG.style.display = "none"
+                artCardVIDFRM.style.display = "none"
                 artCardVID.style.display = "block"
                 artCardVID.style.maxHeight = "none"
-//             }
             });
-//             artCardVIDFRM.insertAdjacentElement('afterbegin', artCardVID);
         }
         let artCardSND = null;
         if(nft.animation_original_url && nft.animation_original_url.indexOf('mp3')>0){
