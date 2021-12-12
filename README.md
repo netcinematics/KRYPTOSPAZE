@@ -1,2 +1,2 @@
-# CRYPTOSPAZE
-The original CRYPTOSPAZE... 2021.
+# KRYPTOSPAZE
+The original KRYPTOSPAZE... 2021.
