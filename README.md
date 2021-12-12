@@ -29,6 +29,7 @@ Social Pipeline. Anyone can do it.
 - Audio Video Stack | DONE.
 - Basic SMART CONTRACT - 721 | DONE.
 - SOLID UNIT TEST MATRIX | DONE.
+    > Truffle, Hardhat, OpenZeppelin
 
 ### TODO
 - 1155 PROXY SMART CONTRACT (upgradeable, ownable)
