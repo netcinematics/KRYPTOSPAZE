@@ -539,8 +539,17 @@ function getNIFTYKeys(){ //search METANET for idx keys for OpenSea individual lo
         let DWN = document.createElement('aside'); //sub
         let BL = document.createElement('aside'); //sub
         BR.innerHTML = "<span>\\</span>"
+        BR.innerHTML = `<span>${getIconLink(BR, 'https://opensea.io/accounts/kryptospaze')}</span>`
         DWN.innerHTML = "<span>~</span>"
         BL.innerHTML = "<span>2021</span>"
+        // setMETA(nft)
+
+        
+        // if(nft.meta){ //loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}) }
+        //     if(nft.meta.BR){ (nft.meta.BR.url) ? getIconLink(BR, {url: 'https://opensea.io/accounts/kryptospaze'}) : BR.innerHTML = nft.meta.BR}
+        // }
+
+
         //SUPERTITLE
         let artCardSuperTitle = document.createElement('section'); //Title 2
         artCardSuperTitle.style.padding = "0.111em"
@@ -557,8 +566,8 @@ function getNIFTYKeys(){ //search METANET for idx keys for OpenSea individual lo
         UP.innerHTML = `<span>${nft.id}</span>`
         TL.innerHTML = "<span>2021</span>"
         // debugger; //METACARD useMETA for display
-        //setMETA(nft)
-
+        
+        setMETA(nft)
         if(nft.meta){ //loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}) }
             //for(nftLink of nft.meta) //TODO
             // if(nft.meta.TL){ (nft.meta..url)?  .innerHTML=`<a href="" target="_blank"><img src=""/></a>`          :TL.innerHTML = nft.meta.TL}
@@ -645,8 +654,12 @@ function getNIFTYKeys(){ //search METANET for idx keys for OpenSea individual lo
         let DWN = document.createElement('aside'); //sub
         let BL = document.createElement('aside'); //sub
         BR.innerHTML = "<span>\\</span>"
+        BR.innerHTML = `<span>${getIconLink(BR, 'https://opensea.io/accounts/kryptospaze')}</span>`
         DWN.innerHTML = "<span>~</span>"
         BL.innerHTML = "<span>/</span>"
+        if(nft.meta){ //loadMETA(nft.meta, {TR:TR,UP:UP,TL:TL,BR:BR,DWN:DWN,BL:BL}) }
+            if(nft.meta.BR){ (nft.meta.BR.url) ? getIconLink(BR, nft.meta.BR.url) : BR.innerHTML = nft.meta.BR}
+        }
         //SUPERTITLE
         let artCardSuperTitle = document.createElement('section'); //Title 2
         artCardSuperTitle.style.padding = "0.111em"
