@@ -13,13 +13,21 @@
             background-color: black; 
             background-image:linear-gradient(to top right, 
                 darkslateblue, #002, #000, #002, #004,  steelblue);
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                    user-select: none; /* Non-prefixed version, currently*/
         }
         .menuBtn{
-            background: #27182e;
+            background: #1b0d21;
             margin: 0.222em;
             padding: 0.444em;
             border-radius: 13px;
-            font-family: Verdana
+            font-family: Verdana;
+            border: 1px solid skyblue;
+            text-shadow: 0.5px 1px 1px #fa015f;
         }
         .menuBtn:hover{ border-radius:10px; border:1px solid steelblue; cursor: pointer; }
 
@@ -70,12 +78,12 @@
 <section style="padding: 0.444em; font-size:0.888em;">
     
     <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px purple;">NFTs:</span>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+    <a href="https://opensea.io/accounts/kryptospaze" target="_blank" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
+    <i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i>
+    <i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i>
+    <i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i>
+    <i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i>
+    <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i>
         
 </section>  
 <script>
@@ -83,16 +91,16 @@
 </script>
 <header style="padding:0.666em;">
     <section>
-        <span style="    font-size:1.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;">~&nbsp;</span>
+        <span style="    font-size:0.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;"><&nbsp;</span>
         <span>KRYPT0SPAZE</span>
-        <span style="    font-size:1.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;">~&nbsp;</span>
+        <span style="    font-size:0.444em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px purple;">>&nbsp;</span>
     </section>
     <section style="padding:0.777em;">
-        <span style="    font-size:1.222em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px skyblue;">~&nbsp;</span>
-        <span>by spazeFalcon</span>
-        <span style="    font-size:1.222em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px skyblue;">~&nbsp;</span>
+        <span style="    font-size:0em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px skyblue;">~&nbsp;</span>
+        <span style="font-style:italic">by spazeFalcon</span>
+        <span style="    font-size:0em; font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.0888em;text-shadow: 1px 1px 1px skyblue;">~&nbsp;</span>
     </section>
-    <section id="statusDisplay1" style="font-size: 0.666em;">rendering $ETH NFTs from OpenSea.io</section>
+    <section id="statusDisplay1" style="font-size: 0.666em;">ETHEREUM NFTs from OpenSea.io</section>
     <!-- <section id="statusDisplay1">< ~ ></section> -->
 </header>
 <article>
@@ -103,15 +111,15 @@
 <section style="padding: 0.444em;">
     <!-- <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px white;">EPICs:</span> -->
     <BR>
-    <button id="NavBtn1" class="menuBtn" onclick="menuFn(event)"}>
+    <button id="NavBtn6" class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-home" style="color:darkorange">&nbsp;WEBz</i></a>
-    <button id="NavBtn2" class="menuBtn" onclick="menuFn(event)"}>
+    <button id="NavBtn7" class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-photo-video" style="color:lightskyblue">&nbsp;CARDz</i></a>
-    <button id="NavBtn3"  class="menuBtn" onclick="menuFn(event)"}>
+    <button id="NavBtn8"  class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-book" style="color:darkseagreen">&nbsp;HEROz</i></a>
-    <button id="NavBtn4"  class="menuBtn" onclick="menuFn(event)"}>
+    <button id="NavBtn9"  class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-music" style="color:mediumpurple">&nbsp;JAMz</i></a>
-    <button id="NavBtn5"  class="menuBtn" onclick="menuFn(event)"}>
+    <button id="NavBtn10"  class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-video" style="color:indianred">&nbsp;VIDz</i></a>
     <!-- <button id="NavBtn6"  class="menuBtn" onclick="menuFn(event)"}>
         <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a> -->
@@ -124,15 +132,30 @@
 <section style="padding: 0.444em; font-size:0.888em;">
     
     <span style="font-weight:bold; font-family:impact; color:steelblue; letter-spacing:0.222em;text-shadow: 1px 1px 1px purple;">NFTs:</span>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i></a>
-    <a href="#main" class="button"><i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i></a>
+    <a href="https://opensea.io/accounts/kryptospaze" target="_blank" class="button"><i class="fas fa-asterisk" style="color:darkorange">&nbsp;OpenSea</i></a>
+    <i class="fas fa-asterisk" style="color:lightskyblue">&nbsp;ETH</i>
+    <i class="fas fa-asterisk" style="color:darkseagreen">&nbsp;SOL</i>
+    <i class="fas fa-asterisk" style="color:mediumpurple">&nbsp;ADA</i>
+    <i class="fas fa-asterisk" style="color:indianred">&nbsp;MATIC</i>
+    <i class="fas fa-asterisk" style="color:rgb(153 74 241);">&nbsp;ALL</i>
         
 </section>  
 
+<footer>
+    <div id="copyright" style="background: #000004;	box-shadow: 1px 1px 8px 0px lightyellow;
+        border-radius: 13px; margin: 0.888em; padding: 0.888em; font-size: 0.888em;">
+        <div class="menu">
+            <div>2020 - <script>document.write( new Date().getFullYear() );</script> © NetCinematics llc. All rights reserved
+            </div>
+        </div>
+        <div class="menu" style="font-size:0.666em;">
+            <div style="line-height: 1.444em;padding-top: 1.666em;">  
+                 ~ OrbyOrbot™, DocCozmo™, Dr.Becky™, MaxzaDratz™, Marzamoon™, Kryptospaze™, KryptoHeroz™, KryptoCardz™, KryptoVidz™, Krypt0Wurldz™ 
+                 2020 - <script>document.write( new Date().getFullYear() );</script>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 <script>
@@ -155,16 +178,16 @@ class MainVw {
 
 function menuFn(e){ //ALL MENU BEHAVIOR in 1 FACTORY fn.
     switch (e.target.parentElement.id){
-        case 'NavBtn1' : window.open("https://netcinematics.github.io/CRYPTOSPAZE/", '_blank'); ; break;
+        case 'NavBtn1' : window.open("https://netcinematics.github.io/KRYPTOSPAZE/", '_blank'); break;
         case 'NavBtn2' : MainVw.getNFTFactory(2); break;
         case 'NavBtn3' : MainVw.getNFTFactory(3); break;
         case 'NavBtn4' : MainVw.getNFTFactory(4); break;
         case 'NavBtn5' : MainVw.getNFTFactory(5); break;
-        case 'NavBtn6' : MainVw.getNFTFactory(6); break;
-        case 'NavBtn7' : MainVw.getNFTFactory(7); break;
-        case 'NavBtn8' : MainVw.getNFTFactory(8); break;
-        case 'NavBtn9' : MainVw.getNFTFactory(9); break;
-        case 'NavBtn10' : MainVw.getNFTFactory(10); break;
+        case 'NavBtn6' : window.open("https://netcinematics.github.io/KRYPTOSPAZE/", '_blank'); break;
+        case 'NavBtn7' : MainVw.getNFTFactory(2); break;
+        case 'NavBtn8' : MainVw.getNFTFactory(3); break;
+        case 'NavBtn9' : MainVw.getNFTFactory(4); break;
+        case 'NavBtn10' : MainVw.getNFTFactory(5); break;
         case 'NavBtn11' : MainVw.getNFTFactory(11); break;
         case 'NavBtn12' : MainVw.getNFTFactory(12); break;
         default : return;
