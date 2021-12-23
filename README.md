@@ -1,6 +1,8 @@
 # KRYPTOSPAZE
 The original KRYPTOSPAZE... by spazeFalcon.
 Digital Novel (c) copyright 2021, NetCinematics.
+ENTER KRYPTOSPAZE here:
+https://netcinematics.github.io/KRYPTOSPAZE/
 
 ----------
 
