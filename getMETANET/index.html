@@ -202,8 +202,10 @@ function initPage(){
  * GETDATA - all types of data requestFunctions here-. - : )
 \***************************************************************************************************/
     function getNFTFactory(mode){
+        mode = 6; //hardcode fix
         try{
             if (nftDisplay1) { nftDisplay1.innerHTML = ""; } //BLANK data view-.
+            // debugger;
             if(MainVw.idx){
                 let keys = getNIFTYKeys(); //Search METANET, for SINGULAR LOOKUP-.
                 if(!keys){mode=6;} //error, render all-.
@@ -217,7 +219,7 @@ function initPage(){
                     return; //end nav handling-.
                 }
             } 
-            if(mode===2){  //cardz
+            if(mode===2){  //cardz - broken
                 fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmocardz',{method: 'GET'})
                     .then(response => response.json())
                     .then((data) => { //debugger; console.log(data);
@@ -225,7 +227,7 @@ function initPage(){
                     })
                     .catch(err => console.error(err));
             } else 
-            if(mode===3){  //heroz
+            if(mode===3){  //heroz - working
 
                 //just lukkee dargon
                 fetch('https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/32091639769859466206787752406743660124435242419967811135209154770640320856065/',{method: 'GET'})
@@ -252,15 +254,20 @@ function initPage(){
 
 
             } else 
-            if(mode===4){  //jamz
-                fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmosonicz',{method: 'GET'})
-                    .then(response => response.json())
+            if(mode===4){  //jamz - broken
+                //https://opensea.io/collection/cozmosonicz
+                fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmosonicz',{method: 'GET', mode: 'no-cors'})
+                    .then((response) => {
+                        debugger;
+                        if(response.ok){ response.json() }
+                        else { throw 'opensea down'}
+                    })
                     .then((data) => { //debugger; console.log(data);
-                        showNFTs(data.assets)
+                        // showNFTs(data.assets)
                     })
                     .catch(err => console.error(err));
             } else 
-            if(mode===5){  //vidz
+            if(mode===5){  //vidz - broken
                     fetch('https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20&collection=cozmospaze',{method: 'GET'})
                     .then(response => response.json())
                     .then((data) => { //debugger; console.log(data);
@@ -758,6 +765,7 @@ function getNIFTYKeys(){ //search METANET for idx keys for OpenSea individual lo
         return `hsl(${h}deg, ${s}%, ${l}%)`;
     }
    
+    // BR.innerHTML = `<span>${getIconLink(BR, 'https://opensea.io/accounts/kryptospaze')}</span>`
     function getIconLink(node, url){
         node.style.marginTop = "-1em";
         return node.innerHTML=`<a href="${url}" target="_blank"><img src="../images/osblue.png" class="hoverGlow" style="width:2em;border-radius:100%;"/></a>`          
